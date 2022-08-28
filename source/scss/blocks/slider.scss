@@ -96,6 +96,9 @@
   max-width: 34rem;
   font-size: 1.8rem;
   line-height: 2rem;
+  opacity: 0;
+  transform: translateX(30px);
+  transition: transform .5s ease, opacity .5s ease;
 
   @media (min-width: $stop-scaling) {
     margin-top: 36px;
@@ -273,6 +276,27 @@
       width: 0.4rem;
       height: 0.4rem;
       background-color: $c-light;
+    }
+  }
+}
+
+.swiper-slide {
+  &-active, &-next {
+    .slider__item-text {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  &-active {
+    .slider__item-text {
+      transition-delay: .5s;
+    }
+  }
+
+  &-next {
+    .slider__item-text {
+      transition-delay: .7s;
     }
   }
 }
