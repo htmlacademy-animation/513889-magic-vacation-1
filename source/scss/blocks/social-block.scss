@@ -40,6 +40,8 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform .3s cubic-bezier(.17,.67,.63,1.41);
   }
 
   svg {
@@ -255,6 +257,14 @@
         width: 10px;
         height: 10px;
       }
+    }
+  }
+}
+
+.loaded {
+  .social-block__toggler {
+    &::before {
+      transform: translate(-50%, -50%) scale(1);
     }
   }
 }
