@@ -36,8 +36,8 @@
   width: 10rem;
   color: $c-light;
   opacity: 0;
-  transform: translateX(-20px);
-  transition: transform .3s cubic-bezier(.2,.65,.72,1.1), opacity .3s cubic-bezier(.2,.65,.72,1.1);
+  transform: translateX(-2rem);
+  transition: transform .3s $decelerated, opacity .3s $decelerated;
 
   @media (min-width: $stop-scaling) {
     top: -5px;
@@ -181,7 +181,7 @@
   line-height: 1.0418;
   color: $c-light;
   opacity: 0;
-  transition: opacity .3s cubic-bezier(.2,.65,.72,1.1);
+  transition: opacity .3s $decelerated;
 
   @media (min-width: $stop-scaling) {
     font-size: 12px;

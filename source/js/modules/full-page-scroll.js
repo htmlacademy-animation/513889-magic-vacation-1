@@ -41,8 +41,18 @@ export default class FullPageScroll {
 
   onUrlHashChanged() {
     const newIndex = Array.from(this.screenElements).findIndex((screen) => location.hash.slice(1) === screen.id);
+    const currentPosition = this.activeScreen;
     this.activeScreen = (newIndex < 0) ? 0 : newIndex;
-    this.changePageDisplay();
+    if (currentPosition === 1) {
+      const overlay = document.querySelector(`.overlay`);
+      overlay.classList.add(`overlay--active`);
+      setTimeout(() => {
+        this.changePageDisplay();
+        overlay.classList.remove(`overlay--active`);
+      }, 400);
+    } else {
+      this.changePageDisplay();
+    }
   }
 
   changePageDisplay() {
