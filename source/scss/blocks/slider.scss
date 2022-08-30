@@ -97,7 +97,7 @@
   font-size: 1.8rem;
   line-height: 2rem;
   opacity: 0;
-  transform: translateX(30px);
+  transform: translateX(3rem);
   transition: transform .5s ease, opacity .5s ease;
 
   @media (min-width: $stop-scaling) {

@@ -19,3 +19,8 @@ $retina-dpi: 144dpi;
 $retina-dppx: 1.5dppx;
 
 $index: 1.38871;
+
+$standard: cubic-bezier(0.4, 0.0, 0.2, 1);
+$decelerated: cubic-bezier(0.0, 0.0, 0.2, 1);
+$accelerated: cubic-bezier(0.4, 0.0, 1, 1);
+$rebound: cubic-bezier(.17,.67,.63,1.41);
