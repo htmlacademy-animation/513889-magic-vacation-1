@@ -170,7 +170,7 @@
     background-color: $c-purple;
     border-radius: 50%;
     transform: scale(0);
-    animation-name: raise;
+    animation-name: zoomIn;
     animation-duration: .3s;
     animation-timing-function: $rebound;
     animation-fill-mode: forwards;
@@ -185,7 +185,7 @@
     line-height: 5rem;
     text-align: center;
     opacity: 0;
-    animation: appear;
+    animation: fadeIn;
     animation-duration: .3s;
     animation-fill-mode: forwards;
 
@@ -202,7 +202,7 @@
 
   p {
     margin: 0;
-    animation: ride;
+    animation: fadeInRight;
     opacity: 0;
     transform: translateX(3rem);
     animation-duration: .3s;
@@ -234,7 +234,7 @@
 
   span {
     opacity: 0;
-    animation: appear;
+    animation: fadeIn;
     animation-duration: .2s;
     animation-fill-mode: forwards;
     animation-delay: 1.1s;
@@ -245,7 +245,7 @@
     right: 0;
     left: auto;
     opacity: 0;
-    animation: expand, appear .1s;
+    animation: expand, fadeIn .1s;
     animation-timing-function: $decelerated;
     animation-delay: .9s;
     animation-duration: .3s;
@@ -270,35 +270,6 @@
   @media (max-width: $mobile) and (orientation: landscape) {
     bottom: 2rem;
     right: 1.5rem;
-  }
-}
-
-@keyframes raise {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1);
-  }
-}
-
-@keyframes appear {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes ride {
-  from {
-    transform: translateX(3rem);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
   }
 }
 

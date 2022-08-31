@@ -95,7 +95,7 @@
   line-height: 1.27;
   opacity: 0;
   transform: translateY(10px);
-  transition: transform .5s ease .5s, opacity .5s ease .5s;
+  transition: transform .5s $decelerated .5s, opacity .5s $decelerated .5s;
 
   @media (min-width: $stop-scaling) {
     width: 509px;
@@ -172,3 +172,9 @@
     transform: translateY(0);
   }
 }
+
+//.intro__title {
+//  &.animate .text__word > span {
+//    transform: translate3d(0, 0, 0);
+//  }
+//}
