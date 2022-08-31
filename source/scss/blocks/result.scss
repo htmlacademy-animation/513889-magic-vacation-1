@@ -255,6 +255,17 @@
 
 .result__form {
   margin-top: auto;
+
+  .form__field {
+    width: 0;
+    opacity: 0;
+    animation: expandInput 0.3s $decelerated 0.9s forwards, fadeIn 0.3s $decelerated 0.9s forwards;
+  }
+
+  .form__button {
+    opacity: 0;
+    animation: fadeIn 0.3s $decelerated 0.9s forwards;
+  }
 }
 
 .result--trip,
@@ -310,6 +321,17 @@
     @media (max-width: $mobile) and (orientation: landscape) {
       width: 45rem;
     }
+  }
+}
+
+@keyframes expandInput {
+  from {
+    opacity: 1;
+    width: 0;
+  }
+  to {
+    width: calc(100% - 31rem);
+    opacity: 1;
   }
 }
 

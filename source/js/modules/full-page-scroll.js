@@ -50,7 +50,7 @@ export default class FullPageScroll {
       setTimeout(() => {
         this.changePageDisplay();
         overlay.classList.remove(`overlay--active`);
-        this.runAnimation(10);
+        this.runAnimation(50);
       }, 400);
     } else {
       this.changePageDisplay();
