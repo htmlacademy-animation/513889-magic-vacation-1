@@ -1,4 +1,5 @@
 import throttle from 'lodash/throttle';
+import {animationArr} from "./onload";
 
 export default class FullPageScroll {
   constructor() {
@@ -49,9 +50,11 @@ export default class FullPageScroll {
       setTimeout(() => {
         this.changePageDisplay();
         overlay.classList.remove(`overlay--active`);
+        this.runAnimation(50);
       }, 400);
     } else {
       this.changePageDisplay();
+      this.runAnimation();
     }
   }
 
@@ -97,6 +100,16 @@ export default class FullPageScroll {
       this.activeScreen = Math.min(this.screenElements.length - 1, ++this.activeScreen);
     } else {
       this.activeScreen = Math.max(0, --this.activeScreen);
+    }
+  }
+
+  runAnimation(timeout = 0) {
+    const isLoaded = document.querySelector(`body`).classList.contains(`loaded`);
+    if (isLoaded) {
+      animationArr.forEach((item) => item.destroyAnimation());
+      setTimeout(() => {
+        animationArr[this.activeScreen].runAnimation();
+      }, timeout);
     }
   }
 }

@@ -99,3 +99,51 @@ img {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+.text__word {
+  display: inline-block;
+  overflow: hidden;
+  width: max-content;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    transform: translateX(3rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.title {
+  .text__word > span {
+    padding-top: 21px;
+    transform: translate3d(0, 1.1em, 0);
+    display: inline-block;
+  }
+  &.animate {
+    .text__word > span {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
