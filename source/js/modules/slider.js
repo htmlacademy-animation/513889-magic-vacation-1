@@ -3,6 +3,7 @@ import Swiper from "swiper";
 export default () => {
   let storySlider;
   let sliderContainer = document.getElementById(`story`);
+  const body = document.querySelector(`body`);
   sliderContainer.style.backgroundImage = `url("img/slide1.jpg"), linear-gradient(180deg, rgba(83, 65, 118, 0) 0%, #523E75 16.85%)`;
 
   const setSlider = function () {
@@ -51,6 +52,12 @@ export default () => {
         },
         on: {
           slideChange: () => {
+            [2, 4, 6].forEach((item) => {
+              body.classList.remove(`slide-${item}`);
+            });
+            if (storySlider.activeIndex !== 0) {
+              body.classList.add(`slide-${storySlider.activeIndex}`);
+            }
             if (storySlider.activeIndex === 0) {
               sliderContainer.style.backgroundImage = `url("img/slide1.jpg")`;
             } else if (storySlider.activeIndex === 2) {

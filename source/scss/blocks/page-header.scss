@@ -282,11 +282,11 @@
 
     &:hover,
     &:focus {
-      color: $c-purple;
+      color: $c-dark;
       outline: none;
 
       &::after {
-        background-color: $c-purple;
+        background-color: $c-dark;
         transform-origin: left;
         transform: scale(1, 1);
       }
@@ -324,6 +324,40 @@
     a {
       &::after {
         width: 100%;
+      }
+    }
+  }
+}
+
+.slide-2 {
+  .page-header__menu {
+    a:hover {
+      color: $c-lblue;
+
+      &::after {
+        background-color: $c-lblue;
+      }
+    }
+  }
+}
+.slide-4 {
+  .page-header__menu {
+    a:hover {
+      color: $c-dblue;
+
+      &::after {
+        background-color: $c-dblue;
+      }
+    }
+  }
+}
+.slide-6 {
+  .page-header__menu {
+    a:hover {
+      color: $c-purple;
+
+      &::after {
+        background-color: $c-purple;
       }
     }
   }

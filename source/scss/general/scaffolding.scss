@@ -135,6 +135,25 @@ img {
   }
 }
 
+@keyframes rollInFromRight {
+  from {
+    transform: translateX(150%) rotate(180deg);
+  }
+  to {
+    transform: translate(0);
+  }
+}
+
+@keyframes rollInFromLeft {
+  from {
+    transform: translateX(-150%) rotate(-180deg);
+  }
+
+  to {
+    transform: translate(0);
+  }
+}
+
 .title {
   .text__word > span {
     padding-top: 21px;
