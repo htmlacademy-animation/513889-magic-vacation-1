@@ -53,7 +53,7 @@
 
   &:hover,
   .social-block--active & {
-    color: $c-purple;
+    color: $c-dark;
 
     &::before {
       width: 112.5%;
@@ -62,11 +62,11 @@
   }
 
   &:focus {
-    color: $c-purple;
+    color: $c-dark;
     outline: none;
 
     &::before {
-      border-color: $c-purple;
+      border-color: $c-dark;
     }
 
     & + .social-block__list {
@@ -82,8 +82,8 @@
     &::before {
       width: 100%;
       height: 100%;
-      background-color: $c-purple;
-      border-color: $c-purple;
+      background-color: $c-dark;
+      border-color: $c-dark;
     }
   }
 }
@@ -265,6 +265,87 @@
   .social-block__toggler {
     &::before {
       transform: translate(-50%, -50%) scale(1);
+    }
+  }
+}
+
+.slide-2 {
+  .social-block__toggler {
+    &:hover,
+    .social-block--active & {
+      color: $c-lblue;
+    }
+
+    &:focus {
+      color: $c-lblue;
+
+      &::before {
+        border-color: $c-lblue;
+      }
+    }
+
+    &:active,
+    &:active:focus {
+      color: $c-light;
+
+      &::before {
+        background-color: $c-lblue;
+        border-color: $c-lblue;
+      }
+    }
+  }
+}
+
+.slide-4 {
+  .social-block__toggler {
+    &:hover,
+    .social-block--active & {
+      color: $c-dblue;
+    }
+
+    &:focus {
+      color: $c-dblue;
+
+      &::before {
+        border-color: $c-dblue;
+      }
+    }
+
+    &:active,
+    &:active:focus {
+      color: $c-light;
+
+      &::before {
+        background-color: $c-dblue;
+        border-color: $c-dblue;
+      }
+    }
+  }
+}
+
+.slide-6 {
+  .social-block__toggler {
+    &:hover,
+    .social-block--active & {
+      color: $c-purple;
+    }
+
+    &:focus {
+      color: $c-purple;
+
+      &::before {
+        border-color: $c-purple;
+      }
+    }
+
+    &:active,
+    &:active:focus {
+      color: $c-light;
+
+      &::before {
+        background-color: $c-purple;
+        border-color: $c-purple;
+      }
     }
   }
 }

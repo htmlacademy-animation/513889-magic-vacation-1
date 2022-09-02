@@ -9,6 +9,9 @@ export default class FullPageScroll {
 
     this.screenElements = document.querySelectorAll(`.screen:not(.screen--result)`);
     this.menuElements = document.querySelectorAll(`.page-header__menu .js-menu-link`);
+    this.overlay = document.querySelector(`.overlay`);
+    this.footers = document.querySelectorAll(`.screen__footer`);
+    this.disclaimer = document.querySelector(`.screen__disclaimer`);
 
     this.activeScreen = 0;
     this.onScrollHandler = this.onScroll.bind(this);
@@ -45,13 +48,17 @@ export default class FullPageScroll {
     const currentPosition = this.activeScreen;
     this.activeScreen = (newIndex < 0) ? 0 : newIndex;
     if (currentPosition === 1) {
-      const overlay = document.querySelector(`.overlay`);
-      overlay.classList.add(`overlay--active`);
+      this.overlay.classList.add(`overlay--active`);
+      this.footers.forEach((item) => item.classList.add(`screen__footer--hidden`));
+      this.disclaimer.classList.add(`screen__disclaimer--hidden`);
       setTimeout(() => {
+        this.overlay.classList.remove(`overlay--active`);
         this.changePageDisplay();
-        overlay.classList.remove(`overlay--active`);
         this.runAnimation(50);
       }, 400);
+    } else if (currentPosition === 4) {
+      this.changePageDisplay();
+      this.runFooterAnimation();
     } else {
       this.changePageDisplay();
       this.runAnimation();
@@ -103,12 +110,23 @@ export default class FullPageScroll {
     }
   }
 
+  runFooterAnimation() {
+    this.footers.forEach((item) => item.classList.add(`screen__footer--hidden`));
+    this.disclaimer.classList.add(`screen__disclaimer--hidden`);
+    setTimeout(() => {
+      this.footers.forEach((item) => item.classList.remove(`screen__footer--hidden`));
+      this.disclaimer.classList.remove(`screen__disclaimer--hidden`);
+    }, 0);
+  }
+
   runAnimation(timeout = 0) {
     const isLoaded = document.querySelector(`body`).classList.contains(`loaded`);
     if (isLoaded) {
       animationArr.forEach((item) => item.destroyAnimation());
       setTimeout(() => {
         animationArr[this.activeScreen].runAnimation();
+        this.footers.forEach((item) => item.classList.remove(`screen__footer--hidden`));
+        this.disclaimer.classList.remove(`screen__disclaimer--hidden`);
       }, timeout);
     }
   }
